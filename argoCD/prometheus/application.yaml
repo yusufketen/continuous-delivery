@@ -26,12 +26,12 @@ spec:
             additionalScrapeConfigs: |
               - job_name: 'argocd'
                 scrape_interval: 1s
-                scrape_timeout: 10s
+                scrape_timeout: 30s
                 static_configs:
-                  - targets: ['argocd-application-controller-metrics.argocd.svc.cluster.local:8082', 'argocd-application-controller-metrics.argocd.svc.cluster.local:8083', 'argocd-redis-metrics.argocd.svc.cluster.local:9121']
+                  - targets: ['argocd-application-controller-metrics.argocd.svc.cluster.local:8082', 'argocd-redis-metrics.argocd.svc.cluster.local:9121']
               - job_name: 'alertManager'
                 scrape_interval: 1s
-                scrape_timeout: 10s
+                scrape_timeout: 30s
                 static_configs:
                   - targets: ['alertmanager-operated.argocd.svc.cluster.local:9093']
         alertmanager:
